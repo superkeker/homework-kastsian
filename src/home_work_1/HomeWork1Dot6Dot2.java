@@ -1,17 +1,18 @@
 package home_work_1;
 
+import java.util.Objects;
 import java.util.Scanner;
 
 public class HomeWork1Dot6Dot2 {
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
-        System.out.println("Р’РІРµРґРёС‚Рµ Р’Р°С€Рµ РёРјСЏ:");
+        System.out.println("Введите Ваше имя:");
         String s = scanner.next();
-        if (s.equals("Р’Р°СЃСЏ")){
-            System.out.println("РџСЂРёРІРµС‚!");
-            System.out.println("РЇ С‚РµР±СЏ С‚Р°Рє РґРѕР»РіРѕ Р¶РґР°Р»");
-        } else if (s.equals("РђРЅР°СЃС‚Р°СЃРёСЏ")) {
-            System.out.println("РЇ С‚РµР±СЏ С‚Р°Рє РґРѕР»РіРѕ Р¶РґР°Р»");
+        if (Objects.equals(s, "Вася")){
+            System.out.println("Привет!");
+            System.out.println("Я тебя так долго ждал");
+        } else if (Objects.equals(s, "Анастасия")) {
+            System.out.println("Я тебя так долго ждал");
         }
     }
 }
