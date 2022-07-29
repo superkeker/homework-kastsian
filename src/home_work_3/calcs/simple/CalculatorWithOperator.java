@@ -4,20 +4,16 @@ import home_work_3.calcs.api.ICalculator;
 
 public class CalculatorWithOperator implements ICalculator {
     public double calcDivision(double numerator, double denominator){
-        double result = numerator / denominator;
-        return result;
+        return numerator / denominator;
     }
     public double multiplication(double multibly1, double multiply2){
-        double result = multibly1 * multiply2;
-        return result;
+        return multibly1 * multiply2;
     }
     public double subtraction(double sub1, double sub2){
-        double result = sub1 - sub2;
-        return result;
+        return sub1 - sub2;
     }
     public double addition(double add1, double add2){
-        double result = add1 + add2;
-        return result;
+        return add1 + add2;
     }
     public double raisingToAnNumberPower(double number, int exponent){
         double result = number;
@@ -37,7 +33,6 @@ public class CalculatorWithOperator implements ICalculator {
         }
     }
     public double squareRoot(double number){
-        double result = Math.sqrt(number);
-        return result;
+        return Math.sqrt(number);
     }
 }

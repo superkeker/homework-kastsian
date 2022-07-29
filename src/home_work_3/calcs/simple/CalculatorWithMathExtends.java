@@ -4,8 +4,7 @@ import home_work_3.calcs.api.ICalculator;
 
 public class CalculatorWithMathExtends extends CalculatorWithOperator implements ICalculator {
     public double raisingToAnNumberPower(double number, int exponent){
-        double result = Math.pow(number, exponent);
-        return result;
+        return Math.pow(number, exponent);
     }
     public double module(double number){
         return Math.abs(number);

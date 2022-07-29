@@ -3,10 +3,9 @@ package home_work_3.calcs.additional;
 import home_work_3.calcs.simple.CalculatorWithOperator;
 
 public class CalculatorWithCounterAutoComposite {
-    CalculatorWithOperator calculatorWithOperator;
+    private final CalculatorWithOperator calculatorWithOperator;
     public CalculatorWithCounterAutoComposite(){
         calculatorWithOperator = new CalculatorWithOperator();
-        this.calculatorWithOperator = calculatorWithOperator;
     }
     private long counter;
     public void incrementCountOperation(){

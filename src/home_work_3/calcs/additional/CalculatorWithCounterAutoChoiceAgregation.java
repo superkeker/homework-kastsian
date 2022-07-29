@@ -1,14 +1,13 @@
 package home_work_3.calcs.additional;
 
-import home_work_3.calcs.api.ICalculator;
 import home_work_3.calcs.simple.CalculatorWithMathCopy;
 import home_work_3.calcs.simple.CalculatorWithMathExtends;
 import home_work_3.calcs.simple.CalculatorWithOperator;
 
 public class CalculatorWithCounterAutoChoiceAgregation {
-    CalculatorWithOperator calculatorWithOperator;
-    CalculatorWithMathCopy calculatorWithMathCopy;
-    CalculatorWithMathExtends calculatorWithMathExtends;
+    private CalculatorWithOperator calculatorWithOperator;
+    private CalculatorWithMathCopy calculatorWithMathCopy;
+    private CalculatorWithMathExtends calculatorWithMathExtends;
 
     public CalculatorWithCounterAutoChoiceAgregation(CalculatorWithOperator calculatorWithOperator){
         this.calculatorWithOperator = calculatorWithOperator;
@@ -33,13 +32,13 @@ public class CalculatorWithCounterAutoChoiceAgregation {
         double div = 0;
         if(calculatorWithOperator != null){
             incrementCountOperation();
-            return div = calculatorWithOperator.calcDivision(numerator, denominator);
+            return calculatorWithOperator.calcDivision(numerator, denominator);
         } else if (calculatorWithMathCopy != null) {
             incrementCountOperation();
-            return div = calculatorWithMathCopy.calcDivision(numerator, denominator);
+            return calculatorWithMathCopy.calcDivision(numerator, denominator);
         } else if (calculatorWithMathExtends != null) {
             incrementCountOperation();
-            return div = calculatorWithMathExtends.calcDivision(numerator, denominator);
+            return calculatorWithMathExtends.calcDivision(numerator, denominator);
         }
         return div;
     }
@@ -47,13 +46,13 @@ public class CalculatorWithCounterAutoChoiceAgregation {
         double mul = 0;
         if(calculatorWithOperator != null){
             incrementCountOperation();
-            return mul = calculatorWithOperator.multiplication(multiply1, multiply2);
+            return calculatorWithOperator.multiplication(multiply1, multiply2);
         } else if (calculatorWithMathCopy != null) {
             incrementCountOperation();
-            return mul = calculatorWithMathCopy.multiplication(multiply1, multiply2);
+            return calculatorWithMathCopy.multiplication(multiply1, multiply2);
         } else if (calculatorWithMathExtends != null) {
             incrementCountOperation();
-            return mul = calculatorWithMathExtends.multiplication(multiply1, multiply2);
+            return calculatorWithMathExtends.multiplication(multiply1, multiply2);
         }
         return mul;
     }
@@ -62,13 +61,13 @@ public class CalculatorWithCounterAutoChoiceAgregation {
         double sub = 0;
         if(calculatorWithOperator != null){
             incrementCountOperation();
-            return sub = calculatorWithOperator.subtraction(sub1, sub2);
+            return calculatorWithOperator.subtraction(sub1, sub2);
         } else if (calculatorWithMathCopy != null) {
             incrementCountOperation();
-            return sub = calculatorWithMathCopy.subtraction(sub1, sub2);
+            return calculatorWithMathCopy.subtraction(sub1, sub2);
         } else if (calculatorWithMathExtends != null) {
             incrementCountOperation();
-            return sub = calculatorWithMathExtends.subtraction(sub1, sub2);
+            return calculatorWithMathExtends.subtraction(sub1, sub2);
         }
         return sub;
     }
@@ -76,13 +75,13 @@ public class CalculatorWithCounterAutoChoiceAgregation {
         double add = 0;
         if(calculatorWithOperator != null){
             incrementCountOperation();
-            return add = calculatorWithOperator.addition(add1, add2);
+            return calculatorWithOperator.addition(add1, add2);
         } else if (calculatorWithMathCopy != null) {
             incrementCountOperation();
-            return add = calculatorWithMathCopy.addition(add1, add2);
+            return calculatorWithMathCopy.addition(add1, add2);
         } else if (calculatorWithMathExtends != null) {
             incrementCountOperation();
-            return add = calculatorWithMathExtends.addition(add1, add2);
+            return calculatorWithMathExtends.addition(add1, add2);
         }
         return add;
     }
@@ -90,13 +89,13 @@ public class CalculatorWithCounterAutoChoiceAgregation {
         double pow = 0;
         if(calculatorWithOperator != null){
             incrementCountOperation();
-            return pow = calculatorWithOperator.raisingToAnNumberPower(number, exponent);
+            return calculatorWithOperator.raisingToAnNumberPower(number, exponent);
         } else if (calculatorWithMathCopy != null) {
             incrementCountOperation();
-            return pow = calculatorWithMathCopy.raisingToAnNumberPower(number, exponent);
+            return calculatorWithMathCopy.raisingToAnNumberPower(number, exponent);
         } else if (calculatorWithMathExtends != null) {
             incrementCountOperation();
-            return pow = calculatorWithMathExtends.raisingToAnNumberPower(number, exponent);
+            return calculatorWithMathExtends.raisingToAnNumberPower(number, exponent);
         }
         return pow;
     }
@@ -104,13 +103,13 @@ public class CalculatorWithCounterAutoChoiceAgregation {
         double mod = 0;
         if(calculatorWithOperator != null){
             incrementCountOperation();
-            return mod = calculatorWithOperator.module(number);
+            return calculatorWithOperator.module(number);
         } else if (calculatorWithMathCopy != null) {
             incrementCountOperation();
-            return mod = calculatorWithMathCopy.module(number);
+            return calculatorWithMathCopy.module(number);
         } else if (calculatorWithMathExtends != null) {
             incrementCountOperation();
-            return mod = calculatorWithMathExtends.module(number);
+            return calculatorWithMathExtends.module(number);
         }
         return mod;
     }
@@ -118,13 +117,13 @@ public class CalculatorWithCounterAutoChoiceAgregation {
         double sqr = 0;
         if(calculatorWithOperator != null){
             incrementCountOperation();
-            return sqr = calculatorWithOperator.squareRoot(number);
+            return calculatorWithOperator.squareRoot(number);
         } else if (calculatorWithMathCopy != null) {
             incrementCountOperation();
-            return sqr = calculatorWithMathCopy.squareRoot(number);
+            return calculatorWithMathCopy.squareRoot(number);
         } else if (calculatorWithMathExtends != null) {
             incrementCountOperation();
-            return sqr = calculatorWithMathExtends.squareRoot(number);
+            return calculatorWithMathExtends.squareRoot(number);
         }
         return sqr;
     }

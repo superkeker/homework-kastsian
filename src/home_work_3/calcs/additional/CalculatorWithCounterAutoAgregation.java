@@ -3,7 +3,7 @@ package home_work_3.calcs.additional;
 import home_work_3.calcs.simple.CalculatorWithOperator;
 
 public class CalculatorWithCounterAutoAgregation {
-    CalculatorWithOperator calculatorWithOperator;
+    private final CalculatorWithOperator calculatorWithOperator;
     public CalculatorWithCounterAutoAgregation(CalculatorWithOperator calculatorWithOperator){
         this.calculatorWithOperator = calculatorWithOperator;
     }
