@@ -1,5 +1,6 @@
 package home_work_5.utils;
 
+import java.io.FileReader;
 import java.util.Random;
 import java.util.Scanner;
 import java.util.concurrent.ThreadLocalRandom;
@@ -53,6 +54,22 @@ public class PersonUtils {
             }
         }
         return String.valueOf(str);
+    }
+    public static String randomNameFromFile() throws Exception {
+        Scanner file = new Scanner(new FileReader("C:\\projects\\It-Academy\\JD1\\homework\\src\\home_work_5\\names.txt"));
+        Random random = new Random();
+        String names = file.nextLine();
+        file.close();
+        String[] namesArray = names.split(" ");
+        return namesArray[random.nextInt(namesArray.length)];
+    }
+    public static String randomNickFromFile() throws Exception {
+        Scanner file = new Scanner(new FileReader("C:\\projects\\It-Academy\\JD1\\homework\\src\\home_work_5\\nicks.txt"));
+        Random random = new Random();
+        String animalNames = file.nextLine();
+        file.close();
+        String[] namesArray = animalNames.split(" ");
+        return namesArray[random.nextInt(namesArray.length)];
     }
 }
 

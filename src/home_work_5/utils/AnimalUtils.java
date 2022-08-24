@@ -1,5 +1,6 @@
 package home_work_5.utils;
 
+import java.io.FileReader;
 import java.util.Random;
 import java.util.Scanner;
 import java.util.concurrent.ThreadLocalRandom;
@@ -35,5 +36,13 @@ public class AnimalUtils {
             str.append(c);
         }
         return String.valueOf(str);
+    }
+    public static String randomAnimalNameFromFile() throws Exception {
+        Scanner file = new Scanner(new FileReader("C:\\projects\\It-Academy\\JD1\\homework\\src\\home_work_5\\animal names.txt"));
+        Random random = new Random();
+        String animalNames = file.nextLine();
+        file.close();
+        String[] namesArray = animalNames.split(" ");
+        return namesArray[random.nextInt(namesArray.length)];
     }
 }

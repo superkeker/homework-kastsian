@@ -1,9 +1,9 @@
 package home_work_5.dto;
 
 public class PersonDTO {
-    private String nick;
-    private String password;
-    private String name;
+    private final String nick;
+    private final String password;
+    private final String name;
 
     public PersonDTO(String nick, String password, String name){
         this.nick = nick;
