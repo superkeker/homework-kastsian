@@ -1,35 +1,45 @@
 package home_work_2.loops;
 
+
+import java.util.Objects;
 import java.util.Scanner;
 
 public class HomeWork1Dot2 {
-    public static void main(String[] args) {
-        Scanner scanner = new Scanner(System.in);
-        String str = null;
-        if (scanner.hasNextInt()) {
-            str = scanner.next();
-        } else if (scanner.hasNextDouble()) {
-            System.out.println("¬ведено не целое число");
-            System.exit(0);
-        } else {
-            System.out.println("¬ведено не число");
-            System.exit(0);
+    public static String multiplyNumbers(String numbers){
+        if(!Objects.equals( null, conditionCheck(numbers))){
+            return conditionCheck(numbers);
         }
-        String[] strArray = str.split("");
+
         StringBuilder sb = new StringBuilder();
-        int[] numbers = new int[strArray.length];
+
+        String str = String.valueOf(numbers);
+        String[] strArray = str.split("");
+
+        long[] array = new long[strArray.length];
 
         for (int i = 0; i < strArray.length; i++) {
-            numbers[i] = Integer.parseInt(strArray[i]);
+            array[i] = Integer.parseInt(strArray[i]);
         }
-        sb.append(numbers[0]);
-        int result = numbers[0];
 
-        for (int i = 1; i < numbers.length; i++) {
-            result *= numbers[i];
-            sb.append(" * " + numbers[i]);
+        long result = array[0];
+
+        sb.append(array[0]);
+        for (int i = 1; i < array.length; i++) {
+            result *= array[i];
+            sb.append(" * ").append(array[i]);
         }
-        sb.append(" = " + result);
-        System.out.println(sb);
+        sb.append(" = ").append(result);
+
+        return String.valueOf(sb);
+    }
+    private static String conditionCheck(String numbers){
+        try(Scanner scanner = new Scanner(numbers)){
+            if(scanner.hasNextInt()){
+                return null;
+            } else if(scanner.hasNextDouble()) {
+                return "¬ведено не целое число";
+            }
+        }
+        return "¬ведено не число";
     }
 }

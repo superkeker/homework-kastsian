@@ -1,15 +1,9 @@
 package home_work_2.loops;
 
 public class HomeWork1Dot6 {
-    public static void main(String[] args) {
-        int res2;
-        int res3;
-        int res4;
-        int res5;
-        int res6;
-        int res7;
-        int res8;
-        int res9;
+    public static void table(){
+        int res2, res3, res4, res5, res6, res7, res8, res9;
+
         for (byte i = 1; i <= 10; i++) {
             res2 = i * 2;
             res3 = i * 3;

@@ -1,16 +1,8 @@
 package home_work_2.arrays;
 
-import static home_work_2.utils.ArraysUtils.arrayFromConsole;
-
 public class ArraysIteration {
-    public static void main(String[] args) {
-        int[] container1 = arrayFromConsole();
-        //soutArrayElemets(container1);
-        //soutSecondArrayElement(container1);
-        soutArrayElementsRevers(container1);
-    }
 
-    private static void soutArrayElementsRevers(int[] array) {
+    public static void soutArrayElementsRevers(int[] array) {
         int i1 = array.length-1;
         do {
             System.out.print(array[i1] + " ");
@@ -30,7 +22,7 @@ public class ArraysIteration {
         System.out.println();
         String result = "";
         for(int i : array){
-            result = i + "\r\n" + result;
+            result = i + "\r" + "\n" + result;
         }
         System.out.println(result);
     }
@@ -74,8 +66,8 @@ public class ArraysIteration {
             i2++;
         }
         System.out.println();
-        for (int i = 0; i < array.length; i++) {
-            System.out.print(array[i] + " ");
+        for (int j : array) {
+            System.out.print(j + " ");
         }
         System.out.println();
         for(int i : array){
