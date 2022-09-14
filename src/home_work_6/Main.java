@@ -12,12 +12,13 @@ public class Main {
     private static final LinkedHashMap<String, Integer> sortedMap = new LinkedHashMap<>();
     private static final ArrayList<Integer> list = new ArrayList<>();
     private static long countOfWords;
+
     public static void main(String[] args) {
         String fileName = "Война и мир_книга.txt";
-        try(BufferedReader reader = new BufferedReader(new FileReader(fileName))) {
+        try (BufferedReader reader = new BufferedReader(new FileReader(fileName))) {
             RegExSearch search = new RegExSearch();
             String line;
-            while ((line = reader.readLine()) != null){
+            while ((line = reader.readLine()) != null) {
                 String[] separatedLine = line.split("[^а-яА-Я0-9-]+");
                 setWordsAndMap(separatedLine);
             }
@@ -39,18 +40,23 @@ public class Main {
                 = Map.Entry.comparingByValue();
     }
 
-    private static void setWordsAndMap(String[] separatedLine){
-        for (int i = 0; i <= separatedLine.length-1; i++) {
+    /**
+     * Добавляем элементы в Map
+     *
+     * @param separatedLine массив слов
+     */
+    private static void setWordsAndMap(String[] separatedLine) {
+        for (int i = 0; i <= separatedLine.length - 1; i++) {
 
-            if(separatedLine[i].contains("-")){
+            if (separatedLine[i].contains("-")) {
                 separatedLine[i] = specialChanges(separatedLine[i]);
             }
-            if(separatedLine[i].isEmpty()){
+            if (separatedLine[i].isEmpty()) {
                 continue;
             }
             words.add(separatedLine[i]);
 
-            if(wordMap.containsKey(separatedLine[i])){
+            if (wordMap.containsKey(separatedLine[i])) {
                 int countOfKey = wordMap.get(separatedLine[i]);
                 countOfKey++;
                 wordMap.put(separatedLine[i], countOfKey);
@@ -61,30 +67,47 @@ public class Main {
             countOfWords++;
         }
     }
+
+    /**
+     * Убираем -
+     *
+     * @param word принимает строку с текстом
+     * @return возвращаем строку
+     */
     private static String specialChanges(String word) {
-        while(word.startsWith("-") || word.endsWith("-")){
-            if(word.startsWith("-")){
+        while (word.startsWith("-") || word.endsWith("-")) {
+            if (word.startsWith("-")) {
                 word = word.replaceFirst("-", "");
             }
             if (word.endsWith("-")) {
                 StringBuilder sb = new StringBuilder(word);
-                sb.deleteCharAt(sb.length()-1);
+                sb.deleteCharAt(sb.length() - 1);
                 word = sb.toString();
             }
         }
         return word;
     }
-    private static void enterMostPopularWords(int countOfWords){
+
+    /**
+     * Выводим кол-во популярных слов
+     *
+     * @param countOfWords - кол-во слов
+     */
+    private static void enterMostPopularWords(int countOfWords) {
         sortMap();
         int count = 1;
-        for (Map.Entry<String, Integer> word : sortedMap.entrySet()){
-            if (count >= sortedMap.size()-countOfWords){
+        for (Map.Entry<String, Integer> word : sortedMap.entrySet()) {
+            if (count >= sortedMap.size() - countOfWords) {
                 System.out.println(word.getKey() + " " + word.getValue());
             }
             count++;
         }
     }
-    private static void sortMap(){
+
+    /**
+     * Сортирует Map
+     */
+    private static void sortMap() {
         for (Map.Entry<String, Integer> entry : wordMap.entrySet()) {
             list.add(entry.getValue());
         }
