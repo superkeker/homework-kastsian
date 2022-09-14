@@ -14,19 +14,19 @@ public class Main {
     private static long countOfWords;
 
     public static void main(String[] args) {
-        String fileName = "Война и мир_книга.txt";
+        String fileName = "homework-kastsian/src/home_work_6/Р’РѕР№РЅР° Рё РјРёСЂ_РєРЅРёРіР°.txt";
         try (BufferedReader reader = new BufferedReader(new FileReader(fileName))) {
             RegExSearch search = new RegExSearch();
             String line;
             while ((line = reader.readLine()) != null) {
-                String[] separatedLine = line.split("[^а-яА-Я0-9-]+");
+                String[] separatedLine = line.split("[^Р°-СЏРђ-РЇ0-9-]+");
                 setWordsAndMap(separatedLine);
             }
             Random random = new Random();
             enterMostPopularWords(random.nextInt(10));
-            System.out.println(search.search(fileName, "война"));
-            System.out.println(search.search(fileName, "и"));
-            System.out.println(search.search(fileName, "мир"));
+            System.out.println(search.search(fileName, "РІРѕР№РЅР°"));
+            System.out.println(search.search(fileName, "Рё"));
+            System.out.println(search.search(fileName, "РјРёСЂ"));
         } catch (FileNotFoundException e) {
             System.out.println(e.getMessage());
         } catch (IOException e) {
@@ -41,9 +41,9 @@ public class Main {
     }
 
     /**
-     * Добавляем элементы в Map
+     * Р”РѕР±Р°РІР»СЏРµРј СЌР»РµРјРµРЅС‚С‹ РІ Map
      *
-     * @param separatedLine массив слов
+     * @param separatedLine РјР°СЃСЃРёРІ СЃР»РѕРІ
      */
     private static void setWordsAndMap(String[] separatedLine) {
         for (int i = 0; i <= separatedLine.length - 1; i++) {
@@ -69,10 +69,10 @@ public class Main {
     }
 
     /**
-     * Убираем -
+     * РЈР±РёСЂР°РµРј -
      *
-     * @param word принимает строку с текстом
-     * @return возвращаем строку
+     * @param word РїСЂРёРЅРёРјР°РµС‚ СЃС‚СЂРѕРєСѓ СЃ С‚РµРєСЃС‚РѕРј
+     * @return РІРѕР·РІСЂР°С‰Р°РµРј СЃС‚СЂРѕРєСѓ
      */
     private static String specialChanges(String word) {
         while (word.startsWith("-") || word.endsWith("-")) {
@@ -89,9 +89,9 @@ public class Main {
     }
 
     /**
-     * Выводим кол-во популярных слов
+     * Р’С‹РІРѕРґРёРј РєРѕР»-РІРѕ РїРѕРїСѓР»СЏСЂРЅС‹С… СЃР»РѕРІ
      *
-     * @param countOfWords - кол-во слов
+     * @param countOfWords - РєРѕР»-РІРѕ СЃР»РѕРІ
      */
     private static void enterMostPopularWords(int countOfWords) {
         sortMap();
@@ -105,7 +105,7 @@ public class Main {
     }
 
     /**
-     * Сортирует Map
+     * РЎРѕСЂС‚РёСЂСѓРµС‚ Map
      */
     private static void sortMap() {
         for (Map.Entry<String, Integer> entry : wordMap.entrySet()) {
